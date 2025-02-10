@@ -1,15 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcrs466tnmnk7"]
+[gd_scene load_steps=6 format=3 uid="uid://bcrs466tnmnk7"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x2d1c"]
-load_path = "res://.godot/imported/Carved_9Slides.png-337fd7dd7a606a47e410bad38958876f.ctex"
+[ext_resource type="Texture2D" uid="uid://3q0msr3gb5nj" path="res://assets/Inventory.png" id="1_11ws6"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_mimw4"]
+[ext_resource type="PackedScene" uid="uid://cidysn71w7wxv" path="res://scenes/slot_inv.tscn" id="2_neqqx"]
+[ext_resource type="Resource" uid="uid://58b8au3khd4i" path="res://resources/Items/small_health_potion.tres" id="3_fl4yp"]
+[ext_resource type="Resource" uid="uid://d0uf5rhmecfhn" path="res://resources/Items/small_mana_potion.tres" id="5_bc2vp"]
 
-[node name="UI" type="Control"]
+[node name="UI" type="Control" node_paths=PackedStringArray("description")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mimw4")
+description = NodePath("Inventory/Description")
 
 [node name="Inventory" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -18,14 +23,149 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -150.0
-offset_right = 150.0
-offset_bottom = 150.0
+offset_left = -310.5
+offset_top = -220.5
+offset_right = 310.5
+offset_bottom = 220.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CompressedTexture2D_x2d1c")
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
+texture = ExtResource("1_11ws6")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -168.0
+offset_right = 454.0
+offset_bottom = 168.0
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 6
+
+[node name="Slot" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+item = ExtResource("3_fl4yp")
+
+[node name="Slot2" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot3" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot4" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+item = ExtResource("5_bc2vp")
+
+[node name="Slot5" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot6" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot7" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot8" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot9" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot10" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot11" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot12" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot13" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot14" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot15" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot16" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot17" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot18" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot19" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot20" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot21" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot22" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot23" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot24" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot25" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot26" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot27" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot28" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot29" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Slot30" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+layout_mode = 2
+
+[node name="Description" type="NinePatchRect" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -114.5
+offset_top = -20.0
+offset_right = -74.5
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="Inventory/Description"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Description" type="RichTextLabel" parent="Inventory/Description"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="Inventory/Description"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

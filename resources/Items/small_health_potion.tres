@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://58b8au3khd4i"]
+
+[ext_resource type="Texture2D" uid="uid://dn6slemu182us" path="res://assets/PixelArt Icons/Potion/Red Potion.png" id="1_f8h4d"]
+[ext_resource type="Script" path="res://scripts/Item.gd" id="2_qpxk0"]
+
+[resource]
+script = ExtResource("2_qpxk0")
+title = "Small_Health_Potion"
+icon = ExtResource("1_f8h4d")
+description = "Consume this potion to heal 200 hp"

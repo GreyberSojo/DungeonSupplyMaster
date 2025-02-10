@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d0uf5rhmecfhn"]
+
+[ext_resource type="Texture2D" uid="uid://ruyb7lgxlp8t" path="res://assets/PixelArt Icons/Potion/Blue Potion.png" id="1_1fyds"]
+[ext_resource type="Script" path="res://scripts/Item.gd" id="2_4ktmt"]
+
+[resource]
+script = ExtResource("2_4ktmt")
+title = "small_mana_potion"
+icon = ExtResource("1_1fyds")
+description = "Consume this potion to recover 200 mp"
