@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("2_4ktmt")
-title = "small_mana_potion"
+title = "Small Mana Potion"
 icon = ExtResource("1_1fyds")
 description = "Consume this potion to recover 200 mp"

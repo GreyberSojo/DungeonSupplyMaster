@@ -19,3 +19,5 @@ texture = ExtResource("1_b6vho")
 
 [node name="Icon" type="TextureRect" parent="."]
 layout_mode = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

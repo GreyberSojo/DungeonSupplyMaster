@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcrs466tnmnk7"]
+[gd_scene load_steps=6 format=3 uid="uid://bcrs466tnmnk7"]
 
 [ext_resource type="Texture2D" uid="uid://3q0msr3gb5nj" path="res://assets/Inventory.png" id="1_11ws6"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_mimw4"]
 [ext_resource type="PackedScene" uid="uid://cidysn71w7wxv" path="res://scenes/slot_inv.tscn" id="2_neqqx"]
 [ext_resource type="Resource" uid="uid://58b8au3khd4i" path="res://resources/Items/small_health_potion.tres" id="3_fl4yp"]
 [ext_resource type="Resource" uid="uid://d0uf5rhmecfhn" path="res://resources/Items/small_mana_potion.tres" id="5_bc2vp"]
-[ext_resource type="Texture2D" uid="uid://bwj152ndlx68u" path="res://assets/Slot_Inv.png" id="6_82n6x"]
 
 [node name="UI" type="Control" node_paths=PackedStringArray("description")]
 layout_mode = 3
@@ -19,16 +18,17 @@ description = NodePath("Inventory/Description")
 
 [node name="Inventory" type="NinePatchRect" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -310.5
-offset_top = -441.0
+offset_top = -220.5
 offset_right = 310.5
+offset_bottom = 220.5
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 texture = ExtResource("1_11ws6")
 patch_margin_left = 5
 patch_margin_top = 5
@@ -40,10 +40,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 44.5
-offset_top = -166.0
-offset_right = 448.5
-offset_bottom = 170.0
+offset_left = 50.0
+offset_top = -168.0
+offset_right = 454.0
+offset_bottom = 168.0
 grow_vertical = 2
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
@@ -149,52 +149,24 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -215.5
-offset_top = -111.0
-offset_right = -35.5
-offset_bottom = 111.0
+offset_left = -114.5
+offset_top = -20.0
+offset_right = -74.5
+offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("6_82n6x")
-patch_margin_left = 1
-patch_margin_top = 1
-patch_margin_right = 1
-patch_margin_bottom = 1
 
 [node name="Name" type="Label" parent="Inventory/Description"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
+layout_mode = 0
+offset_right = 40.0
 offset_bottom = 23.0
-grow_horizontal = 2
 
 [node name="Description" type="RichTextLabel" parent="Inventory/Description"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -87.5
-offset_top = -77.5
-offset_right = 87.5
-offset_bottom = 77.5
-grow_horizontal = 2
-grow_vertical = 2
-scroll_active = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Icon" type="TextureRect" parent="Inventory/Description"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
