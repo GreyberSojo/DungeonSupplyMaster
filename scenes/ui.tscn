@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://58b8au3khd4i" path="res://resources/Items/small_health_potion.tres" id="3_fl4yp"]
 [ext_resource type="Resource" uid="uid://d0uf5rhmecfhn" path="res://resources/Items/small_mana_potion.tres" id="5_bc2vp"]
 [ext_resource type="Texture2D" uid="uid://bwj152ndlx68u" path="res://assets/Slot_Inv.png" id="6_82n6x"]
-[ext_resource type="Resource" uid="uid://b0f8w8up0ehvu" path="res://resources/Items/medium_health_potion.tres" id="6_a0cje"]
+[ext_resource type="Resource" uid="uid://bluhmoth3qkq3" path="res://resources/Items/medium_mana_potion.tres" id="6_t6qa4"]
 
 [node name="UI" type="Control" node_paths=PackedStringArray("description")]
 layout_mode = 3
@@ -52,17 +52,17 @@ columns = 5
 
 [node name="Slot" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
-item = ExtResource("3_fl4yp")
+item = ExtResource("5_bc2vp")
 
 [node name="Slot2" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
 [node name="Slot3" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
+item = ExtResource("6_t6qa4")
 
 [node name="Slot4" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
-item = ExtResource("5_bc2vp")
 
 [node name="Slot5" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
@@ -72,6 +72,7 @@ layout_mode = 2
 
 [node name="Slot7" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
+item = ExtResource("3_fl4yp")
 
 [node name="Slot8" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
@@ -81,14 +82,12 @@ layout_mode = 2
 
 [node name="Slot10" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
-item = ExtResource("3_fl4yp")
 
 [node name="Slot11" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
 [node name="Slot12" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
-item = ExtResource("6_a0cje")
 
 [node name="Slot13" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2

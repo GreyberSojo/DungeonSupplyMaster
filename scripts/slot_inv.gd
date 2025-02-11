@@ -1,7 +1,5 @@
 extends PanelContainer
 
-@export var InventoryUI : NinePatchRect
-
 @export var item: Item:
 	set(value):
 		item = value

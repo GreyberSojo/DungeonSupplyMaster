@@ -16,6 +16,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Order_Manager="*res://scripts/Order_Manager.gd"
+InventoryManager="*res://scripts/Inventory_Manager.gd"
 DragManager="*res://scripts/DragManager.gd"
 
 [display]
