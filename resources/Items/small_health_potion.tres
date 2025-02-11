@@ -7,4 +7,4 @@
 script = ExtResource("2_qpxk0")
 title = "Small Health Potion"
 icon = ExtResource("1_f8h4d")
-description = "Consume this potion to heal 200 hp"
+description = "Consume this potion to restore 200 hp"

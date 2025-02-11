@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcrs466tnmnk7"]
+[gd_scene load_steps=8 format=3 uid="uid://bcrs466tnmnk7"]
 
 [ext_resource type="Texture2D" uid="uid://3q0msr3gb5nj" path="res://assets/Inventory.png" id="1_11ws6"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_mimw4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://58b8au3khd4i" path="res://resources/Items/small_health_potion.tres" id="3_fl4yp"]
 [ext_resource type="Resource" uid="uid://d0uf5rhmecfhn" path="res://resources/Items/small_mana_potion.tres" id="5_bc2vp"]
 [ext_resource type="Texture2D" uid="uid://bwj152ndlx68u" path="res://assets/Slot_Inv.png" id="6_82n6x"]
+[ext_resource type="Resource" uid="uid://b0f8w8up0ehvu" path="res://resources/Items/medium_health_potion.tres" id="6_a0cje"]
 
 [node name="UI" type="Control" node_paths=PackedStringArray("description")]
 layout_mode = 3
@@ -47,7 +48,7 @@ offset_bottom = 170.0
 grow_vertical = 2
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
-columns = 6
+columns = 5
 
 [node name="Slot" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
@@ -87,6 +88,7 @@ layout_mode = 2
 
 [node name="Slot12" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
+item = ExtResource("6_a0cje")
 
 [node name="Slot13" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
@@ -178,12 +180,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -87.5
-offset_top = -77.5
-offset_right = 87.5
-offset_bottom = 77.5
+offset_left = -80.0
+offset_top = -50.0
+offset_right = 80.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
+fit_content = true
 scroll_active = false
 
 [node name="Icon" type="TextureRect" parent="Inventory/Description"]

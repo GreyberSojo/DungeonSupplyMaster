@@ -51,7 +51,7 @@ func handle_drop() -> void:
 	
 	if target_slot and target_slot != source_slot:
 		swap_items(target_slot)
-	
+	source_slot.icon.modulate.a = 1.0
 	emit_signal("drag_ended")
 
 func get_target_slot() -> PanelContainer:
