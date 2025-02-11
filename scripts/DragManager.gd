@@ -1,9 +1,6 @@
 # drag_manager.gd
 extends Node
 
-signal drag_started
-signal drag_ended
-
 var is_dragging := false
 var dragged_item: Item
 var source_slot: PanelContainer
@@ -19,8 +16,6 @@ func start_drag(item: Item, slot: PanelContainer) -> void:
 	# Crear preview
 	create_drag_preview()
 	
-	emit_signal("drag_started")
-
 func create_drag_preview() -> void:
 	drag_preview = TextureRect.new()
 	drag_preview.texture = dragged_item.icon
@@ -52,7 +47,6 @@ func handle_drop() -> void:
 	if target_slot and target_slot != source_slot:
 		swap_items(target_slot)
 	source_slot.icon.modulate.a = 1.0
-	emit_signal("drag_ended")
 
 func get_target_slot() -> PanelContainer:
 	var mouse_pos := get_viewport().get_mouse_position()
