@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bluhmoth3qkq3"]
+[gd_resource type="Resource" script_class="Item_Data" load_steps=3 format=3 uid="uid://bluhmoth3qkq3"]
 
 [ext_resource type="Texture2D" uid="uid://dhm1ohhw1v6qg" path="res://assets/PixelArt Icons/Potion/Blue Potion 2.png" id="1_bixat"]
-[ext_resource type="Script" path="res://scripts/Item.gd" id="2_myehv"]
+[ext_resource type="Script" path="res://scripts/ItemData.gd" id="2_myehv"]
 
 [resource]
 script = ExtResource("2_myehv")
-title = "Medium Mana Potion"
+item_id = "medium_mana_potion"
+item_name = "Medium Mana Potion"
 icon = ExtResource("1_bixat")
 description = "Consume this potion to restore 500 mana"
+max_stack_size = 99

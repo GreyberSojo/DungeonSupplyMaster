@@ -1,12 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcrs466tnmnk7"]
+[gd_scene load_steps=5 format=3 uid="uid://bcrs466tnmnk7"]
 
 [ext_resource type="Texture2D" uid="uid://3q0msr3gb5nj" path="res://assets/Inventory.png" id="1_11ws6"]
-[ext_resource type="Script" path="res://scripts/ui.gd" id="1_mimw4"]
+[ext_resource type="Script" path="res://scripts/UI.gd" id="1_mimw4"]
 [ext_resource type="PackedScene" uid="uid://cidysn71w7wxv" path="res://scenes/slot_inv.tscn" id="2_neqqx"]
-[ext_resource type="Resource" uid="uid://58b8au3khd4i" path="res://resources/Items/small_health_potion.tres" id="3_fl4yp"]
-[ext_resource type="Resource" uid="uid://d0uf5rhmecfhn" path="res://resources/Items/small_mana_potion.tres" id="5_bc2vp"]
 [ext_resource type="Texture2D" uid="uid://bwj152ndlx68u" path="res://assets/Slot_Inv.png" id="6_82n6x"]
-[ext_resource type="Resource" uid="uid://bluhmoth3qkq3" path="res://resources/Items/medium_mana_potion.tres" id="6_t6qa4"]
 
 [node name="UI" type="Control" node_paths=PackedStringArray("description")]
 layout_mode = 3
@@ -26,7 +23,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -309.0
-offset_top = -250.0
+offset_top = -283.0
 offset_right = 309.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -52,14 +49,12 @@ columns = 6
 
 [node name="Slot" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
-item = ExtResource("5_bc2vp")
 
 [node name="Slot2" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
 [node name="Slot3" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
-item = ExtResource("6_t6qa4")
 
 [node name="Slot4" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
@@ -72,7 +67,6 @@ layout_mode = 2
 
 [node name="Slot7" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
-item = ExtResource("3_fl4yp")
 
 [node name="Slot8" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
@@ -200,3 +194,30 @@ offset_top = -40.0
 offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="AddItem" type="Button" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 10.0
+offset_top = 23.0
+offset_right = 90.0
+offset_bottom = 54.0
+grow_horizontal = 2
+text = "Add Item"
+
+[node name="SortItem" type="Button" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 10.0
+offset_top = 75.0
+offset_right = 90.0
+offset_bottom = 106.0
+grow_horizontal = 2
+text = "Sort Item"
+
+[connection signal="pressed" from="Inventory/AddItem" to="." method="_on_add_item_pressed"]
+[connection signal="pressed" from="Inventory/SortItem" to="." method="_on_sort_item_pressed"]

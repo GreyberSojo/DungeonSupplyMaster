@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DragManager="*res://scripts/DragManager.gd"
+InventoryManager="*res://scripts/InventoryManager.gd"
 
 [display]
 
@@ -24,6 +25,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
+
+[global_group]
+
+inventory_slots=""
 
 [rendering]
 
