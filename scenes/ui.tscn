@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcrs466tnmnk7"]
+[gd_scene load_steps=7 format=3 uid="uid://bcrs466tnmnk7"]
 
 [ext_resource type="Texture2D" uid="uid://3q0msr3gb5nj" path="res://assets/Inventory.png" id="1_11ws6"]
-[ext_resource type="Script" path="res://scripts/UI.gd" id="1_mimw4"]
+[ext_resource type="Script" uid="uid://dq0pynwakk1i7" path="res://scripts/UI.gd" id="1_mimw4"]
 [ext_resource type="PackedScene" uid="uid://cidysn71w7wxv" path="res://scenes/slot_inv.tscn" id="2_neqqx"]
+[ext_resource type="Texture2D" uid="uid://1tqbxkhqc1su" path="res://assets/background.png" id="2_p7vwb"]
+[ext_resource type="Script" uid="uid://d4kt2kvdfj0rp" path="res://scripts/RequestBox.gd" id="5_7bhbo"]
 [ext_resource type="Texture2D" uid="uid://bwj152ndlx68u" path="res://assets/Slot_Inv.png" id="6_82n6x"]
 
 [node name="UI" type="Control" node_paths=PackedStringArray("description")]
@@ -13,18 +15,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mimw4")
-description = NodePath("Inventory/Description")
+description = NodePath("Control/Inventory/Description")
 
-[node name="Inventory" type="NinePatchRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_p7vwb")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Inventory" type="NinePatchRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -309.0
-offset_top = -283.0
-offset_right = 309.0
+offset_left = 340.0
+offset_top = 451.0
+offset_right = 929.0
+offset_bottom = 680.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("1_11ws6")
@@ -33,121 +47,121 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="GridContainer" type="GridContainer" parent="Inventory"]
+[node name="GridContainer" type="GridContainer" parent="Control/Inventory"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = -120.0
-offset_right = 312.0
-offset_bottom = 120.0
+offset_left = 10.0
+offset_top = -100.0
+offset_right = 252.0
+offset_bottom = 100.0
 grow_vertical = 2
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
 columns = 6
 
-[node name="Slot" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot2" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot2" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot3" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot3" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot4" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot4" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot5" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot5" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot6" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot6" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot7" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot7" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot8" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot8" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot9" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot9" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot10" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot10" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot11" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot11" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot12" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot12" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot13" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot13" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot14" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot14" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot15" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot15" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot16" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot16" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot17" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot17" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot18" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot18" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot19" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot19" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot20" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot20" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot21" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot21" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot22" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot22" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot23" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot23" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot24" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot24" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot25" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot25" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot26" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot26" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot27" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot27" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot28" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot28" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot29" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot29" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Slot30" parent="Inventory/GridContainer" instance=ExtResource("2_neqqx")]
+[node name="Slot30" parent="Control/Inventory/GridContainer" instance=ExtResource("2_neqqx")]
 layout_mode = 2
 
-[node name="Description" type="NinePatchRect" parent="Inventory"]
+[node name="Description" type="NinePatchRect" parent="Control/Inventory"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -215.5
-offset_top = -111.0
-offset_right = -35.5
-offset_bottom = 111.0
+offset_left = -207.0
+offset_top = -107.5
+offset_right = -13.0
+offset_bottom = 107.5
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("6_82n6x")
@@ -156,7 +170,7 @@ patch_margin_top = 1
 patch_margin_right = 1
 patch_margin_bottom = 1
 
-[node name="Name" type="Label" parent="Inventory/Description"]
+[node name="Name" type="Label" parent="Control/Inventory/Description"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -166,7 +180,7 @@ offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
 
-[node name="Description" type="RichTextLabel" parent="Inventory/Description"]
+[node name="Description" type="RichTextLabel" parent="Control/Inventory/Description"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -182,7 +196,7 @@ grow_vertical = 2
 fit_content = true
 scroll_active = false
 
-[node name="Icon" type="TextureRect" parent="Inventory/Description"]
+[node name="Icon" type="TextureRect" parent="Control/Inventory/Description"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -195,29 +209,93 @@ offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="AddItem" type="Button" parent="Inventory"]
+[node name="AddItem" type="Button" parent="Control/Inventory"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 10.0
-offset_top = 23.0
-offset_right = 90.0
-offset_bottom = 54.0
+offset_left = -24.0
+offset_top = 24.0
+offset_right = 56.0
+offset_bottom = 55.0
 grow_horizontal = 2
 text = "Add Item"
 
-[node name="SortItem" type="Button" parent="Inventory"]
+[node name="SortItem" type="Button" parent="Control/Inventory"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 10.0
-offset_top = 75.0
-offset_right = 90.0
-offset_bottom = 106.0
+offset_left = -23.0
+offset_top = 77.0
+offset_right = 57.0
+offset_bottom = 108.0
 grow_horizontal = 2
 text = "Sort Item"
 
-[connection signal="pressed" from="Inventory/AddItem" to="." method="_on_add_item_pressed"]
-[connection signal="pressed" from="Inventory/SortItem" to="." method="_on_sort_item_pressed"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Control" node_paths=PackedStringArray("requests_container")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 909.0
+offset_top = 451.0
+offset_right = 1240.0
+offset_bottom = 680.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_11ws6")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+script = ExtResource("5_7bhbo")
+requests_container = NodePath("ScrollContainer/VBoxContainer")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect/ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Menu" type="NinePatchRect" parent="Control"]
+layout_mode = 0
+offset_top = 491.0
+offset_right = 360.0
+offset_bottom = 720.0
+texture = ExtResource("1_11ws6")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1067.0
+offset_top = 421.0
+offset_right = 1111.0
+offset_bottom = 452.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TEST"
+
+[connection signal="pressed" from="Control/Inventory/AddItem" to="." method="_on_add_item_pressed"]
+[connection signal="pressed" from="Control/Inventory/SortItem" to="." method="_on_sort_item_pressed"]
+[connection signal="pressed" from="Control/Button" to="Control/NinePatchRect" method="_on_button_pressed"]

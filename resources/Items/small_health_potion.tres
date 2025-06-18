@@ -1,12 +1,15 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://58b8au3khd4i"]
 
 [ext_resource type="Texture2D" uid="uid://dn6slemu182us" path="res://assets/PixelArt Icons/Potion/Red Potion.png" id="1_f8h4d"]
-[ext_resource type="Script" path="res://scripts/ItemData.gd" id="2_qpxk0"]
+[ext_resource type="Script" uid="uid://bqbgy6x26iid" path="res://scripts/ItemData.gd" id="2_qpxk0"]
 
 [resource]
 script = ExtResource("2_qpxk0")
 item_id = "small_health_potion"
 item_name = "Small Health Potion"
 icon = ExtResource("1_f8h4d")
-description = "Consume this potion to restore 200 hp"
-max_stack_size = 99
+heal_amount = 50
+description = "Consume this potion to restore 50 hp"
+max_stack_size = 5
+drop_rate = 50.0
+max_drop_quantity = 3.0

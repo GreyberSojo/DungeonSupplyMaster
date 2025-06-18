@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdg2pqgw3hbbr"]
+
+[ext_resource type="Script" uid="uid://cjkvvhaeel83m" path="res://scripts/battle/character.gd" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://dvn4ewny7euqq" path="res://icon.svg" id="2_4ra3w"]
+[ext_resource type="Script" uid="uid://bqbgy6x26iid" path="res://scripts/ItemData.gd" id="2_nenq2"]
+[ext_resource type="Resource" uid="uid://b0f8w8up0ehvu" path="res://resources/items/medium_health_potion.tres" id="3_md484"]
+[ext_resource type="Resource" uid="uid://bluhmoth3qkq3" path="res://resources/items/medium_mana_potion.tres" id="4_ipns3"]
+[ext_resource type="Resource" uid="uid://58b8au3khd4i" path="res://resources/items/small_health_potion.tres" id="5_8qclf"]
+[ext_resource type="Resource" uid="uid://d0uf5rhmecfhn" path="res://resources/items/small_mana_potion.tres" id="6_w8i8w"]
+[ext_resource type="Resource" uid="uid://dye2q3cen0q8g" path="res://resources/items/cooper_coin.tres" id="7_md484"]
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_md0e3")
+max_health = 1000
+health = 1000
+items_to_drop = Array[ExtResource("2_nenq2")]([ExtResource("3_md484"), ExtResource("4_ipns3"), ExtResource("5_8qclf"), ExtResource("6_w8i8w"), ExtResource("7_md484")])
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4ra3w")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="ProgressBar" parent="UI"]
+custom_minimum_size = Vector2(100, 25)
+layout_mode = 0
+offset_left = -50.0
+offset_top = -95.0
+offset_right = 50.0
+offset_bottom = -70.0
+show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -94.0
+offset_right = 40.0
+offset_bottom = -71.0
+text = "1000/1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CooldownBar" type="ProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = 65.0
+offset_right = 45.0
+offset_bottom = 70.0
+max_value = 1.0
+show_percentage = false

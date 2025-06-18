@@ -1,12 +1,15 @@
-[gd_resource type="Resource" script_class="Item_Data" load_steps=3 format=3 uid="uid://d0uf5rhmecfhn"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://d0uf5rhmecfhn"]
 
 [ext_resource type="Texture2D" uid="uid://ruyb7lgxlp8t" path="res://assets/PixelArt Icons/Potion/Blue Potion.png" id="1_1fyds"]
-[ext_resource type="Script" path="res://scripts/ItemData.gd" id="2_4ktmt"]
+[ext_resource type="Script" uid="uid://bqbgy6x26iid" path="res://scripts/ItemData.gd" id="2_4ktmt"]
 
 [resource]
 script = ExtResource("2_4ktmt")
 item_id = "small_mana_potion"
 item_name = "Small Mana Potion"
 icon = ExtResource("1_1fyds")
+heal_amount = 0
 description = "Consume this potion to restore 200 mana"
-max_stack_size = 99
+max_stack_size = 5
+drop_rate = 50.0
+max_drop_quantity = 3.0

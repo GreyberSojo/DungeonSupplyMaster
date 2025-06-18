@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RequestData" load_steps=3 format=3 uid="uid://clti5uqjd428m"]
+
+[ext_resource type="Texture2D" uid="uid://dn6slemu182us" path="res://assets/PixelArt Icons/Potion/Red Potion.png" id="1_1ie01"]
+[ext_resource type="Script" uid="uid://bhtlwl3m1r18w" path="res://scripts/RequestData.gd" id="2_j73x6"]
+
+[resource]
+script = ExtResource("2_j73x6")
+item_id = "small_health_potion"
+request_text = "Necesito un Small Health Potion para sanar las heridas leves test test test test testNecesito un Small Health Potion para sanar las heridas leves test test test test test"
+request_texture = ExtResource("1_1ie01")
+request_time = 15
+required_quantity = 1

@@ -19,7 +19,7 @@ func show_description(item: ItemData) -> void: # Corrected type to ItemData
 
 func hide_description() -> void:
 	# Animación opcional
-	create_tween().tween_property(description, "modulate:a", 0.0, 0.2).finished.connect(
+	create_tween().tween_property(description, "modulate:a", 0.0, 0.005).finished.connect(
 		func(): description.visible = false
 	)
 
@@ -55,11 +55,14 @@ func update_inventory_display():
 
 
 func _on_add_item_pressed():
-	var item_resource = preload("res://resources/Items/medium_health_potion.tres")
-	var quantity_to_add = 80 # You can change the quantity if needed
+	var item_resource = preload("res://resources/items/medium_mana_potion.tres")
+	var item_resource2 = preload("res://resources/items/small_health_potion.tres")
+	
+	var quantity_to_add = 1 # You can change the quantity if needed
 	var item_added = InventoryManager.add_item(item_resource, quantity_to_add)
-	if item_added:
-		print("Item added to inventory through button: " + item_resource.item_name)
+	var item_added2 = InventoryManager.add_item(item_resource2, quantity_to_add)
+	if item_added && item_added2:
+		print("Item added to inventory through button: " + item_resource.item_name +", "+ item_resource2.item_name)
 	else:
 		print("Inventory full, item not added through button: " + item_resource.item_name)
 

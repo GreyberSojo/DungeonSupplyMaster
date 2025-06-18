@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="DungeonSupplyMaster"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DragManager="*res://scripts/DragManager.gd"
 InventoryManager="*res://scripts/InventoryManager.gd"
+RequestManager="*res://scripts/RequestManager.gd"
 
 [display]
 
@@ -29,6 +30,7 @@ window/stretch/scale_mode="integer"
 [global_group]
 
 inventory_slots=""
+request_ui_box=""
 
 [rendering]
 

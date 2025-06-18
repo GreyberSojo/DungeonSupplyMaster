@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmcm8j24wun3t"]
+
+[ext_resource type="Script" path="res://scripts/RequestBox.gd" id="1_hepco"]
+
+[node name="RequestUI" type="PanelContainer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -331.0
+offset_top = -283.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_hepco")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Request" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+show_percentage = false

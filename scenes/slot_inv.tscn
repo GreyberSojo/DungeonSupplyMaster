@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://cidysn71w7wxv"]
 
 [ext_resource type="Texture2D" uid="uid://bwj152ndlx68u" path="res://assets/Slot_Inv.png" id="1_b6vho"]
-[ext_resource type="Script" path="res://scripts/SlotInv.gd" id="1_og8ux"]
+[ext_resource type="Script" uid="uid://bbd4pewdxjmba" path="res://scripts/SlotInv.gd" id="1_og8ux"]
 
 [node name="Slot" type="PanelContainer" groups=["inventory_slots"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1245.0
-offset_bottom = -685.0
+offset_right = -1248.0
+offset_bottom = -688.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_og8ux")
@@ -24,6 +24,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_font_sizes/font_size = 12
 text = "99"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

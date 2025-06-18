@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dye2q3cen0q8g"]
+
+[ext_resource type="Texture2D" uid="uid://cfp6wlh03mcki" path="res://assets/PixelArt Icons/Misc/Copper Coin.png" id="1_4tawt"]
+[ext_resource type="Script" uid="uid://bqbgy6x26iid" path="res://scripts/ItemData.gd" id="2_udjep"]
+
+[resource]
+script = ExtResource("2_udjep")
+item_id = "cooper_coin"
+item_name = "Cooper Coin"
+icon = ExtResource("1_4tawt")
+heal_amount = 0
+description = "It must be usefull"
+max_stack_size = 99
+drop_rate = 100.0
+max_drop_quantity = 100.0
+metadata/_custom_type_script = "uid://bqbgy6x26iid"

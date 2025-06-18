@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RequestData" load_steps=3 format=3 uid="uid://qnn8xeyaepm4"]
+
+[ext_resource type="Texture2D" uid="uid://bf8x618blab8" path="res://assets/PixelArt Icons/Potion/Red Potion 2.png" id="1_ip8du"]
+[ext_resource type="Script" uid="uid://bhtlwl3m1r18w" path="res://scripts/RequestData.gd" id="2_rhy7f"]
+
+[resource]
+script = ExtResource("2_rhy7f")
+item_id = "medium_health_potion"
+request_text = "El personaje ha solicitado un Medium Health Potion"
+request_texture = ExtResource("1_ip8du")
+request_time = 15
+required_quantity = 1
+metadata/_custom_type_script = "uid://bhtlwl3m1r18w"
