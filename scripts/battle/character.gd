@@ -2,7 +2,7 @@
 extends Node2D
 
 signal defeated
-signal attacked(opponent, damage)
+signal attacked(opponent, damage, character)
 signal health_changed(new_health)
 signal create_hp_request
 signal create_random_request
@@ -80,7 +80,7 @@ func _on_attack_timer_timeout():
 		flash_attack()
 		var damage = randi_range(attack_power_min, attack_power_max)
 		opponent.take_damage(damage)
-		emit_signal("attacked", opponent, damage)
+		emit_signal("attacked", opponent, damage, self)
 
 func take_damage(damage: int):
 	flash_damage()

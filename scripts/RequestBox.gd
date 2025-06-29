@@ -42,8 +42,10 @@ func _on_item_dropped(item_data, target_slot):
 					print("El ítem soltado (", item_data.item_id, 
 						  ") no coincide con el requerido (", req_data.item_id, ")")
 
-func _on_button_pressed(_name):
+func _on_button_pressed():
+	var _name = name
 	var _new_request = RequestManager.create_request("random_request", _name)
 
 #func _on_battle_create_request() -> void:
-#	var _new_request = RequestManager.create_request()
+#	var _name = name
+#	var _new_request = RequestManager.create_request("random_request", _name)

@@ -12,3 +12,4 @@ heal_amount = 0
 description = "Consume this potion to restore 500 mana"
 max_stack_size = 5
 drop_rate = 25.0
+max_drop_quantity = 5.0

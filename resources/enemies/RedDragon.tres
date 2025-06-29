@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://bx61k60xoned4"]
+
+[ext_resource type="Script" uid="uid://coog36aj6jawp" path="res://scripts/battle/CharacterData.gd" id="1_vjwqi"]
+[ext_resource type="Texture2D" uid="uid://bgicnttl6a6kr" path="res://assets/PixelArt Icons/Monster Part/Monster Egg.png" id="2_qlurh"]
+
+[resource]
+script = ExtResource("1_vjwqi")
+name = "Red Dragon"
+max_hp = 160
+current_hp = 160
+attack_min = 20
+attack_max = 30
+attack_speed = 0.3
+sprite = ExtResource("2_qlurh")
+ai_behavior = "boss"
+skills = Array[String](["flame"])
+drop_table = Array[Dictionary]([])
+is_boss = true
+team = "Red"

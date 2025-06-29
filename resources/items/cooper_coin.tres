@@ -12,5 +12,5 @@ heal_amount = 0
 description = "It must be usefull"
 max_stack_size = 99
 drop_rate = 100.0
-max_drop_quantity = 100.0
+max_drop_quantity = 50.0
 metadata/_custom_type_script = "uid://bqbgy6x26iid"

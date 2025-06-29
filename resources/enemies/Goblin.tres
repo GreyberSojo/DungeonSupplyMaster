@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3 uid="uid://d08mf7osajw8g"]
+
+[ext_resource type="Script" uid="uid://coog36aj6jawp" path="res://scripts/battle/CharacterData.gd" id="1_hyma7"]
+[ext_resource type="Resource" uid="uid://dye2q3cen0q8g" path="res://resources/items/cooper_coin.tres" id="1_ke2li"]
+[ext_resource type="Resource" uid="uid://58b8au3khd4i" path="res://resources/items/small_health_potion.tres" id="2_d72mv"]
+[ext_resource type="Texture2D" uid="uid://ba88thsl4j63l" path="res://assets/PixelArt Icons/Monster Part/Monster Eye.png" id="2_ke2li"]
+
+[resource]
+script = ExtResource("1_hyma7")
+name = "Goblin"
+max_hp = 80
+current_hp = 80
+attack_min = 8
+attack_max = 12
+attack_speed = 0.3
+sprite = ExtResource("2_ke2li")
+ai_behavior = "aggressive"
+skills = Array[String](["quick_attack"])
+drop_table = Array[Dictionary]([{
+"drop_rate": 100.0,
+"item": ExtResource("1_ke2li")
+}, {
+"drop_rate": 100.0,
+"item": ExtResource("2_d72mv")
+}])
+is_boss = false
+team = "Red"

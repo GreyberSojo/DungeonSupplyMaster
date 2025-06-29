@@ -5,11 +5,7 @@
 
 [node name="Ally" type="Node2D"]
 script = ExtResource("1_p4fys")
-max_health = 1000
-health = 1000
-attack_power_min = 20
-attack_power_max = 30
-team = "Blue"
+attack_speed = 1.5
 
 [node name="AttackTimer" type="Timer" parent="."]
 
