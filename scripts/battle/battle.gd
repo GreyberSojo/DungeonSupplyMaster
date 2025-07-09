@@ -109,7 +109,7 @@ func create_opponent(specific_enemy: CharacterData = null, position_index: int =
 	enemy.health = int(enemy_data.current_hp * multipliers.hp)
 	enemy.attack_power_min = int(enemy_data.attack_min * multipliers.attack)
 	enemy.attack_power_max = int(enemy_data.attack_max * multipliers.attack)
-	enemy.attack_speed = enemy_data.attack_speed  # No speed scaling
+	enemy.attack_speed = enemy_data.attack_speed 
 	enemy.ui_index = red_team_count
 	enemy.update_ui()
 	
@@ -150,7 +150,15 @@ func _on_character_defeated(defeated_character):
 
 	if defeated_character.team == "Red":
 		red_team.erase(defeated_character)
-		defeated_character.queue_free()
+		var pos = defeated_character.position
+		var anim_player = defeated_character.get_node("AnimatedSprite2D") as AnimatedSprite2D
+		if anim_player:
+			anim_player.play("die")
+			defeated_character.sprite.hide()
+			await anim_player.animation_finished
+			defeated_character.queue_free()
+		else:
+			print("no se encontro", anim_player)
 	else:
 		blue_team.erase(defeated_character)
 		defeated_character.queue_free()
@@ -172,7 +180,7 @@ func _on_drop(loot_items: Array[Dictionary]) -> void:
 	
 	for loot in loot_items:
 		if try_drop_item(loot):
-			var quantity = randf_range(1, loot.item.max_drop_quantity)
+			var quantity = randf_range(1, loot.max_drop_quantity)
 			var item_added = InventoryManager.add_item(loot.item, quantity)
 			print("cayó! ", loot.item.item_name)
 		else:

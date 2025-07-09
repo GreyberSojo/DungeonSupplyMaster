@@ -46,11 +46,6 @@ func _ready():
 	attack_timer.connect("timeout", _on_attack_timer_timeout)
 	attack_timer.start()
 
-	if team == "Red":
-		sprite.modulate = Color(1, 0, 0)
-	elif team == "Blue":
-		sprite.modulate = Color(0, 0, 1)
-
 	# Configurar UI
 	setup_ui()
 	# Asignar oponente
@@ -109,7 +104,7 @@ func _on_attack_timer_timeout():
 			opponent.take_damage(damage)
 			emit_signal("attacked", opponent, damage, self)
 		"defensive":
-			# Curarse un poco
+			# Curarse un poco (a definir)
 			flash_attack()
 			health += 5  # Ejemplo: curarse 5 HP
 			health = min(health, max_health)

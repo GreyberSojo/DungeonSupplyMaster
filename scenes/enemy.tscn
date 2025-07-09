@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdg2pqgw3hbbr"]
+[gd_scene load_steps=4 format=3 uid="uid://bdg2pqgw3hbbr"]
 
 [ext_resource type="Script" uid="uid://b7qei6jubks42" path="res://scripts/battle/enemy.gd" id="1_md0e3"]
-[ext_resource type="Texture2D" uid="uid://dvn4ewny7euqq" path="res://icon.svg" id="2_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://8sy0b51sys0l" path="res://assets/mobs/red_dragon.png" id="2_4ra3w"]
+[ext_resource type="SpriteFrames" uid="uid://c5ghbxv5csj7e" path="res://assets/anim_death.tres" id="3_4ra3w"]
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_md0e3")
@@ -9,6 +10,7 @@ script = ExtResource("1_md0e3")
 [node name="AttackTimer" type="Timer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("2_4ra3w")
 
 [node name="UI" type="Control" parent="."]
@@ -18,29 +20,37 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HealthBar" type="ProgressBar" parent="UI"]
-custom_minimum_size = Vector2(100, 25)
+custom_minimum_size = Vector2(50, 12)
 layout_mode = 0
-offset_left = -50.0
-offset_top = -95.0
-offset_right = 50.0
-offset_bottom = -70.0
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 25.0
+offset_bottom = -28.0
 show_percentage = false
 
 [node name="HealthLabel" type="Label" parent="UI"]
 layout_mode = 0
-offset_left = -40.0
-offset_top = -94.0
-offset_right = 40.0
-offset_bottom = -71.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+offset_bottom = -28.0
+theme_override_font_sizes/font_size = 8
 text = "1000/1000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CooldownBar" type="ProgressBar" parent="UI"]
 layout_mode = 0
-offset_left = -45.0
-offset_top = 65.0
-offset_right = 45.0
-offset_bottom = 70.0
+offset_left = -25.0
+offset_top = 32.0
+offset_right = 25.0
+offset_bottom = 37.0
 max_value = 1.0
 show_percentage = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("3_4ra3w")
+animation = &"die"
+frame = 9
+frame_progress = 1.0

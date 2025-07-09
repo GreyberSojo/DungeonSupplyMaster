@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://7710yc3dt55e"]
 
 [ext_resource type="Script" uid="uid://cjkvvhaeel83m" path="res://scripts/battle/character.gd" id="1_p4fys"]
-[ext_resource type="Texture2D" uid="uid://dvn4ewny7euqq" path="res://icon.svg" id="1_ttqwp"]
+[ext_resource type="Texture2D" uid="uid://bo58wsxmwter6" path="res://assets/mobs/knight.png" id="2_p4fys"]
 
 [node name="Ally" type="Node2D"]
 script = ExtResource("1_p4fys")
@@ -10,7 +10,8 @@ attack_speed = 1.5
 [node name="AttackTimer" type="Timer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ttqwp")
+scale = Vector2(2, 2)
+texture = ExtResource("2_p4fys")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -19,29 +20,30 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HealthBar" type="ProgressBar" parent="UI"]
-custom_minimum_size = Vector2(100, 25)
+custom_minimum_size = Vector2(50, 12)
 layout_mode = 0
-offset_left = -50.0
-offset_top = -95.0
-offset_right = 50.0
-offset_bottom = -70.0
+offset_left = -25.0
+offset_top = -44.0
+offset_right = 25.0
+offset_bottom = -32.0
 show_percentage = false
 
 [node name="HealthLabel" type="Label" parent="UI"]
 layout_mode = 0
-offset_left = -40.0
-offset_top = -94.0
-offset_right = 40.0
-offset_bottom = -71.0
+offset_left = -20.0
+offset_top = -44.0
+offset_right = 20.0
+offset_bottom = -32.0
+theme_override_font_sizes/font_size = 8
 text = "1000/1000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CooldownBar" type="ProgressBar" parent="UI"]
 layout_mode = 0
-offset_left = -45.0
-offset_top = 65.0
-offset_right = 45.0
-offset_bottom = 70.0
+offset_left = -25.0
+offset_top = 36.0
+offset_right = 25.0
+offset_bottom = 41.0
 max_value = 1.0
 show_percentage = false

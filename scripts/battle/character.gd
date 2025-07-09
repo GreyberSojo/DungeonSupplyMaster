@@ -32,10 +32,6 @@ func _ready():
 	attack_timer.connect("timeout", _on_attack_timer_timeout)
 	attack_timer.start()
 
-	if team == "Red":
-		sprite.modulate = Color(1, 0, 0)
-	elif team == "Blue":
-		sprite.modulate = Color(0, 0, 1)
 
 	# Set up UI
 	setup_ui()

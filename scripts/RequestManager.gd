@@ -55,10 +55,12 @@ func setup(request_data: RequestData, _name) -> PanelContainer:
 	vbox.name = "VBox"
 	container.add_child(vbox)
 	
-				# Creamos el Label para el texto.
+	# Creamos el Label para el titulo.
 	var request_title = Label.new()
 	request_title.name = "Label"
 	request_title.text = _name
+	request_title.add_theme_font_size_override("font_size", 8)
+	
 		
 	# Creamos un HBoxContainer para colocar la imagen y el texto lado a lado.
 	var hbox = HBoxContainer.new()
@@ -66,22 +68,23 @@ func setup(request_data: RequestData, _name) -> PanelContainer:
 	vbox.add_child(request_title)
 	vbox.add_child(hbox)
 	
-
-	
-	# Creamos el TextureRect  para la imagen y el texto.
+	# Creamos el TextureRect  para la imagen.
 	var request_texture = TextureRect.new()
 	request_texture.name = "TextureRect"
 	request_texture.texture = request_data.request_texture
 	request_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED  # Equivalente a stretch_mode = 2
-	request_texture.custom_minimum_size = Vector2(32, 32)  # Tamaño fijo opcional
+	request_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	request_texture.custom_minimum_size = Vector2(16, 16)  # Tamaño fijo opcional
 	hbox.add_child(request_texture)
 	
-	# Creamos el Label para el texto.
+	# Creamos el Label para la descripcion.
 	var request_text = RichTextLabel.new()
 	request_text.name = "RichTextLabel"
 	request_text.text = request_data.request_text
-	request_text.custom_minimum_size = Vector2(280, 64)  # Tamaño fijo opcional
-	request_text.add_theme_font_size_override("font_size", 24)
+	request_text.custom_minimum_size = Vector2(145, 32)  # Tamaño fijo opcional
+	request_text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	request_text.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	request_text.add_theme_font_size_override("normal_font_size", 8)
 	hbox.add_child(request_text)
 	
 	# Creamos y configuramos la ProgressBar.
