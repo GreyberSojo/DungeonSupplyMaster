@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="AllyData" load_steps=3 format=3 uid="uid://blf4nys4roqhb"]
+
+[ext_resource type="Script" uid="uid://dnuyv85hru5kp" path="res://scripts/battle/AllyData.gd" id="1_drirx"]
+[ext_resource type="Texture2D" uid="uid://b7up1t637pgc4" path="res://assets/mobs/archer.png" id="2_kbxw8"]
+
+[resource]
+script = ExtResource("1_drirx")
+name = "Archer"
+max_hp = 90
+current_hp = 90
+attack_min = 5
+attack_max = 15
+magic = 10
+attack_speed = 0.75
+sprite = ExtResource("2_kbxw8")
+skills = Array[String]([])
+team = "Blue"
+dialogue_phrases = {
+"attack": ["Arrow flies true!", "Take this shot!", "Aim for the heart!", "From the shadows!"],
+"damage": ["Ugh, too close!", "My aim wavers!", "That one hurt!", "Need cover!"],
+"defeated": ["My quiver... empty...", "I fall... unstrung...", "No more shots...", "The bow breaks..."],
+"heal": ["Back in the fight!", "Ready to nock!", "Strength returns!", "Arrows fly again!"]
+}
+metadata/_custom_type_script = "uid://dnuyv85hru5kp"

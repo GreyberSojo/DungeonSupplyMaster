@@ -1,0 +1,20 @@
+{
+  "skills": [
+	{
+	  "id": "Heal",
+	  "name": "Curación ligera",
+	  "description": "Restaura 30 HP",
+	  "effect": "apply_heal",
+	  "cost": 10,
+	  "level_required": 5
+	},
+	{
+	  "id": "AreaAttack",
+	  "name": "Ataque en área",
+	  "description": "Daño 20 a todos los enemigos",
+	  "effect": "apply_area_attack",
+	  "cost": 15,
+	  "level_required": 3
+	}
+  ]
+}

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8sy0b51sys0l"
-path="res://.godot/imported/red_dragon.png-448b88ea7c2f86edbf4c8e7a6a04815f.ctex"
+uid="uid://o62jio0jsk8g"
+path="res://.godot/imported/ChestOpen.png-72278bd099671514c01df11f356aa4be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mobs/red_dragon.png"
-dest_files=["res://.godot/imported/red_dragon.png-448b88ea7c2f86edbf4c8e7a6a04815f.ctex"]
+source_file="res://assets/PixelArt Icons/Misc/ChestOpen.png"
+dest_files=["res://.godot/imported/ChestOpen.png-72278bd099671514c01df11f356aa4be.ctex"]
 
 [params]
 

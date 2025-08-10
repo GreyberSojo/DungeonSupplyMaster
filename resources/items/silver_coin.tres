@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://dxw00j7jsnsj0"]
+
+[ext_resource type="Script" uid="uid://bqbgy6x26iid" path="res://scripts/ItemData.gd" id="1_hcxs2"]
+
+[resource]
+script = ExtResource("1_hcxs2")
+item_id = "silver_coin"
+item_name = "Silver Coin"
+heal_amount = 0
+description = ""
+max_stack_size = 5
+metadata/_custom_type_script = "uid://bqbgy6x26iid"

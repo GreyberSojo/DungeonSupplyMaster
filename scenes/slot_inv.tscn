@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bwj152ndlx68u" path="res://assets/Slot_Inv.png" id="1_b6vho"]
 [ext_resource type="Script" uid="uid://bbd4pewdxjmba" path="res://scripts/SlotInv.gd" id="1_og8ux"]
 
-[node name="Slot" type="PanelContainer" groups=["inventory_slots"]]
+[node name="Slot" type="PanelContainer"]
 offset_right = 32.0
 offset_bottom = 32.0
 script = ExtResource("1_og8ux")

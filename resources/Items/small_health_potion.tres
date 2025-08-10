@@ -11,3 +11,4 @@ icon = ExtResource("1_f8h4d")
 heal_amount = 50
 description = "Consume this potion to restore 50 hp"
 max_stack_size = 5
+use_on_player = true

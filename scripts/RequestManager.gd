@@ -2,7 +2,7 @@ extends Node
 
 const REQUESTS_PATH = "res://resources/requests/"
 var available_requests: Array[RequestData] = []
-@onready var request_container = get_node_or_null("/root/Game/UI/Control/NinePatchRect/ScrollContainer/VBoxContainer")
+@onready var request_container = get_node_or_null("/root/Battle/UI/Control/Requests/ScrollContainer/VBoxContainer")
 
 func _ready():
 	load_requests()
@@ -25,6 +25,31 @@ func load_requests():
 	else:
 		push_warning("No se encontró el directorio: " + REQUESTS_PATH)
 
+func delete_request(item_data, target_slot):
+	#Esta parte se puede mover a otra funcion del Inventario para el uso de items general
+	#e.g: InventoryManager.use_item()
+	if item_data and target_slot:
+		if item_data.heal_amount > 0:
+			var ally = target_slot.get_parent()
+			ally._on_battle_heal(item_data.heal_amount)
+		var all_requests = request_container.get_children()
+		for request in all_requests:
+			var _name = "%s_%s" % [item_data.item_id, target_slot.get_parent().name]
+			if request.is_in_group("request_ui_box") && request.name == _name:
+				request.queue_free()
+			break
+	else:
+		var all_requests = request_container.get_children()
+		for request in all_requests:
+			var name_label = request.get_child(0).get_child(0).text
+			if name_label:
+				if request.is_in_group("request_ui_box") && target_slot.name == name_label:
+					request.queue_free()
+				else:		
+					target_slot.queue_free()
+			else:
+				print("El request no tiene el label")
+
 func create_request(request_type, _name):
 	if available_requests.is_empty():
 		push_warning("No hay peticiones disponibles")
@@ -32,22 +57,26 @@ func create_request(request_type, _name):
 	for request in available_requests:
 		if  request_type == request.item_id:
 			var request_instance = setup(request, _name)
-			if request_container:
+			if request_container && request_instance:
 				request_container.add_child(request_instance)
-			return request_instance
-	if request_type == "random_request":
-		var random_request = available_requests.pick_random()
-		var request_instance = setup(random_request, _name)
-		if request_container:
-			request_container.add_child(request_instance)
-		return request_instance
-	else:
-		print("no existe la peticion: ", request_type)
+			break
+		if request_type == "random_request":
+			var random_request = available_requests.pick_random()
+			var request_instance = setup(random_request, _name)
+			if request_container && request_instance:
+				request_container.add_child(request_instance)
+			break
+
 
 func setup(request_data: RequestData, _name) -> PanelContainer:
 	# Creamos un contenedor para la petición.
+	for each_request in request_container.get_children():
+		var new_name = "%s_%s" % [request_data.item_id, _name]
+		if each_request.name == new_name:
+			return null
+	
 	var container = PanelContainer.new()
-	container.name = "RequestInstance"
+	container.name = "%s_%s" % [request_data.item_id, _name]
 	container.add_to_group("request_ui_box")
 	
 	# Creamos un VBoxContainer para organizar los elementos verticalmente.
@@ -59,7 +88,7 @@ func setup(request_data: RequestData, _name) -> PanelContainer:
 	var request_title = Label.new()
 	request_title.name = "Label"
 	request_title.text = _name
-	request_title.add_theme_font_size_override("font_size", 8)
+	request_title.add_theme_font_size_override("font_size", 6)
 	
 		
 	# Creamos un HBoxContainer para colocar la imagen y el texto lado a lado.
@@ -81,10 +110,10 @@ func setup(request_data: RequestData, _name) -> PanelContainer:
 	var request_text = RichTextLabel.new()
 	request_text.name = "RichTextLabel"
 	request_text.text = request_data.request_text
-	request_text.custom_minimum_size = Vector2(145, 32)  # Tamaño fijo opcional
+	request_text.custom_minimum_size = Vector2(145, 16)  # Tamaño fijo opcional
 	request_text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	request_text.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	request_text.add_theme_font_size_override("normal_font_size", 8)
+	request_text.add_theme_font_size_override("normal_font_size", 6)
 	hbox.add_child(request_text)
 	
 	# Creamos y configuramos la ProgressBar.
@@ -115,5 +144,4 @@ func setup(request_data: RequestData, _name) -> PanelContainer:
 
 func _on_timer_timeout(container):
 	print("Fallaste!")
-	if container and container.is_inside_tree():
-		container.queue_free()
+	delete_request(null, container)

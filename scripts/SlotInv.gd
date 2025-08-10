@@ -7,7 +7,6 @@ signal mouse_entered_slot(item: ItemData) # Corrected type to ItemData
 signal mouse_exited_slot()
 
 func _ready() -> void:
-	add_to_group("inventory_slots")
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	update_slot(null) # Initialize slot to empty
@@ -29,7 +28,6 @@ func update_slot(item_stack: ItemStack) -> void:
 		if quantity_label:
 			quantity_label.visible = false
 
-
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and icon.texture != null: # Check if there is an item to drag based on icon texture
@@ -43,7 +41,6 @@ func get_item_data() -> ItemData: # Helper function to get ItemData from the slo
 			if item_stack != null and item_stack.item_data.icon == icon.texture:
 				return item_stack.item_data # Return ItemData if icon matches
 	return null # Return null if no matching ItemData is found.
-
 
 func _on_mouse_entered() -> void:
 	if DragManager.is_dragging:

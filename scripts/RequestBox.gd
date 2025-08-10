@@ -8,7 +8,7 @@ func _ready():
 	DragManager.connect("item_dropped", Callable(self, "_on_item_dropped"))
 	
 # Se actualiza cada frame la barra de progreso de cada request.
-func _process(delta):
+"""func _process(delta):
 	for request in requests_container.get_children():
 		# Buscamos el Timer y la ProgressBar dentro de cada contenedor de petición.
 		if request.has_node("Timer") and request.has_node("ProgressBar"):
@@ -16,7 +16,7 @@ func _process(delta):
 			var progress = request.get_node("ProgressBar") as ProgressBar
 			if timer and progress and !timer.is_stopped():
 				# Calculamos lo transcurrido: wait_time - time_left.
-				progress.value = timer.wait_time - timer.time_left
+				progress.value = timer.wait_time - timer.time_left"""
 
 func _on_item_dropped(item_data, target_slot):
 	print("Ítem soltado en RequestUI:", item_data)
@@ -29,10 +29,11 @@ func _on_item_dropped(item_data, target_slot):
 			if req_data:
 				# Comparamos usando el item_id (debes asegurarte que item_data también tenga la propiedad item_id)
 				if item_data.item_id == req_data.item_id and target_slot:
-					print("¡La petición se completa! Se soltó el ítem:", item_data.item_id)
+					print("¡La petición se completa! Se soltó el ítem:", item_data.item_id) 
+					var user_requested = request.get_child(0).get_child(0).text
 					# Aquí puedes realizar acciones adicionales,
 					if item_data.item_id == "small_health_potion":
-						emit_signal("heal", item_data.heal_amount)
+						emit_signal("heal", item_data.heal_amount, user_requested)
 					# como emitir una señal y/o eliminar la petición completada:
 					emit_signal("request_completed")
 					InventoryManager.remove_item(req_data.item_id, req_data.required_quantity)
@@ -43,9 +44,4 @@ func _on_item_dropped(item_data, target_slot):
 						  ") no coincide con el requerido (", req_data.item_id, ")")
 
 func _on_button_pressed():
-	var _name = name
-	var _new_request = RequestManager.create_request("random_request", _name)
-
-#func _on_battle_create_request() -> void:
-#	var _name = name
-#	var _new_request = RequestManager.create_request("random_request", _name)
+	var _new_request = RequestManager.create_request("random_request", name)

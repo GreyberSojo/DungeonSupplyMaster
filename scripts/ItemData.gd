@@ -9,3 +9,4 @@ class_name ItemData
 @export var heal_amount : int
 @export_multiline var description : String
 @export var max_stack_size : int = 99 # Tamaño máximo de pila.
+@export var use_on_player : bool = false

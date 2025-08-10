@@ -1,18 +1,19 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=5 format=3 uid="uid://d08mf7osajw8g"]
+[gd_resource type="Resource" script_class="EnemyData" load_steps=5 format=3 uid="uid://d08mf7osajw8g"]
 
-[ext_resource type="Script" uid="uid://coog36aj6jawp" path="res://scripts/battle/CharacterData.gd" id="1_hyma7"]
 [ext_resource type="Resource" uid="uid://dye2q3cen0q8g" path="res://resources/items/cooper_coin.tres" id="1_ke2li"]
 [ext_resource type="Resource" uid="uid://58b8au3khd4i" path="res://resources/items/small_health_potion.tres" id="2_d72mv"]
-[ext_resource type="Texture2D" uid="uid://b3aacj76sf2ry" path="res://assets/mobs/little_goblin.png" id="4_d72mv"]
+[ext_resource type="Script" uid="uid://coog36aj6jawp" path="res://scripts/battle/EnemyData.gd" id="3_d72mv"]
+[ext_resource type="Texture2D" uid="uid://b3aacj76sf2ry" path="res://assets/enemies/little_goblin.png" id="4_d72mv"]
 
 [resource]
-script = ExtResource("1_hyma7")
+script = ExtResource("3_d72mv")
 name = "Goblin"
-max_hp = 80
-current_hp = 80
-attack_min = 8
-attack_max = 12
-attack_speed = 0.3
+max_hp = 50
+current_hp = 50
+attack_min = 5
+attack_max = 10
+attack_speed = 0.6
+xp = 50
 sprite = ExtResource("4_d72mv")
 ai_behavior = "aggressive"
 skills = Array[String](["quick_attack"])
@@ -27,3 +28,9 @@ drop_table = Array[Dictionary]([{
 }])
 is_boss = false
 team = "Red"
+dialogue_phrases = {
+"attack": ["*Grunt*", "*Hiss*"],
+"damage": ["*Squeal*", "*Yelp*"],
+"defeated": ["*Groan*", "*Whimper*"],
+"heal": []
+}

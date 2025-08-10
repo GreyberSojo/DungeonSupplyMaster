@@ -31,16 +31,6 @@ func _on_item_collected(item_resource : ItemData): # Corrected type to ItemData
 	else:
 		print("Inventario lleno, no se pudo añadir: " + item_resource.item_name)
 
-func _on_use_potion():
-	if InventoryManager.has_item("potion_health"):
-		if InventoryManager.remove_item("potion_health"):
-			print("Usaste una poción de salud.")
-			update_inventory_display() # Actualiza la UI después de usar una poción
-			# Aplicar efecto de la poción (ej. curar al jugador)
-		else:
-			print("Error al remover poción del inventario.")
-	else:
-		print("No tienes pociones de salud en el inventario.")
 
 func update_inventory_display():
 	var inventory_data = InventoryManager.inventory_slots
@@ -52,7 +42,6 @@ func update_inventory_display():
 		var icon_node = slot_node.find_child("Icon") as TextureRect
 		var quantity_label = slot_node.find_child("Quantity") as Label
 		slot_node.update_slot(item_stack) # Call update_slot in slot_inv.gd and pass the item_stack
-
 
 func _on_add_item_pressed():
 	var item_resource = preload("res://resources/items/medium_mana_potion.tres")

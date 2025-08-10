@@ -1,11 +1,60 @@
-[gd_scene load_steps=3 format=3 uid="uid://7710yc3dt55e"]
+[gd_scene load_steps=11 format=3 uid="uid://7710yc3dt55e"]
 
-[ext_resource type="Script" uid="uid://cjkvvhaeel83m" path="res://scripts/battle/character.gd" id="1_p4fys"]
-[ext_resource type="Texture2D" uid="uid://bo58wsxmwter6" path="res://assets/mobs/knight.png" id="2_p4fys"]
+[ext_resource type="Script" uid="uid://cjkvvhaeel83m" path="res://scripts/battle/ally.gd" id="1_p4fys"]
+[ext_resource type="Texture2D" uid="uid://bo58wsxmwter6" path="res://assets/characters/knight.png" id="2_p4fys"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_136s5"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.752941, 0.752941, 0.752941, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwx6x"]
+bg_color = Color(0.714962, 0.485652, 1.92523e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4fys"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.27451)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx1w2"]
+bg_color = Color(0.294435, 0.512757, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p4fys"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwk5t"]
+bg_color = Color(0.310182, 0.683522, 0.524874, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_darf4"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, -50)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouaj8"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="Ally" type="Node2D"]
 script = ExtResource("1_p4fys")
-attack_speed = 1.5
 
 [node name="AttackTimer" type="Timer" parent="."]
 
@@ -13,28 +62,91 @@ attack_speed = 1.5
 scale = Vector2(2, 2)
 texture = ExtResource("2_p4fys")
 
-[node name="UI" type="Control" parent="."]
+[node name="UI" type="Control" parent="." groups=["ally_ui"]]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="XpBar" type="ProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = -45.0
+offset_right = -27.0
+offset_bottom = -34.0
+theme_override_styles/background = SubResource("StyleBoxFlat_136s5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lwx6x")
+value = 60.0
+fill_mode = 3
+show_percentage = false
+
+[node name="LevelLabel" type="Label" parent="UI/XpBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -4.5
+offset_right = 2.0
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.156863, 0.156863, 0.156863, 1)
+theme_override_font_sizes/font_size = 6
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ManaBar" type="ProgressBar" parent="UI"]
+custom_minimum_size = Vector2(30, 3)
+layout_mode = 0
+offset_left = -21.0
+offset_top = -34.0
+offset_right = 21.0
+offset_bottom = -31.0
+theme_override_styles/background = SubResource("StyleBoxFlat_p4fys")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xx1w2")
+show_percentage = false
+
 [node name="HealthBar" type="ProgressBar" parent="UI"]
-custom_minimum_size = Vector2(50, 12)
+custom_minimum_size = Vector2(50, 9)
 layout_mode = 0
 offset_left = -25.0
 offset_top = -44.0
 offset_right = 25.0
-offset_bottom = -32.0
+offset_bottom = -35.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_p4fys")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lwk5t")
+value = 20.0
 show_percentage = false
+
+[node name="DamageBar" type="ProgressBar" parent="UI/HealthBar"]
+show_behind_parent = true
+custom_minimum_size = Vector2(50, 5)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_darf4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ouaj8")
+value = 30.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="UI/HealthBar"]
+one_shot = true
 
 [node name="HealthLabel" type="Label" parent="UI"]
 layout_mode = 0
-offset_left = -20.0
+offset_left = -25.0
 offset_top = -44.0
-offset_right = 20.0
-offset_bottom = -32.0
-theme_override_font_sizes/font_size = 8
+offset_right = 25.0
+offset_bottom = -35.0
+theme_override_colors/font_shadow_color = Color(0.187176, 0.187176, 0.187176, 1)
+theme_override_font_sizes/font_size = 6
 text = "1000/1000"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -42,8 +154,25 @@ vertical_alignment = 1
 [node name="CooldownBar" type="ProgressBar" parent="UI"]
 layout_mode = 0
 offset_left = -25.0
-offset_top = 36.0
-offset_right = 25.0
-offset_bottom = 41.0
+offset_top = -46.0
+offset_right = 225.0
+offset_bottom = -38.0
+scale = Vector2(0.2, 0.2)
 max_value = 1.0
+step = 0.001
 show_percentage = false
+
+[node name="DialogueLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -92.0
+offset_top = -57.0
+offset_right = 92.0
+offset_bottom = -48.0
+theme_override_colors/font_color = Color(1, 0.517647, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.294118)
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 6
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogueTimer" type="Timer" parent="."]

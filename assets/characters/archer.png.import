@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3aacj76sf2ry"
-path="res://.godot/imported/little_goblin.png-a804708efa00f177aea7192c87305a7d.ctex"
+uid="uid://b7up1t637pgc4"
+path="res://.godot/imported/archer.png-7d96647907759fe0a5b646cd862b7816.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mobs/little_goblin.png"
-dest_files=["res://.godot/imported/little_goblin.png-a804708efa00f177aea7192c87305a7d.ctex"]
+source_file="res://assets/characters/archer.png"
+dest_files=["res://.godot/imported/archer.png-7d96647907759fe0a5b646cd862b7816.ctex"]
 
 [params]
 

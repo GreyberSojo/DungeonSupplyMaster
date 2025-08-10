@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="AllyData" load_steps=3 format=3 uid="uid://cgybye3m3jf1q"]
+
+[ext_resource type="Script" uid="uid://dnuyv85hru5kp" path="res://scripts/battle/AllyData.gd" id="1_5g2uf"]
+[ext_resource type="Texture2D" uid="uid://csg76waqig3c4" path="res://assets/mobs/mage.png" id="2_qci5l"]
+
+[resource]
+script = ExtResource("1_5g2uf")
+name = "Mage"
+max_hp = 70
+current_hp = 70
+attack_min = 5
+attack_max = 15
+magic = 30
+attack_speed = 0.6
+sprite = ExtResource("2_qci5l")
+skills = Array[String](["fireball"])
+team = "Blue"
+dialogue_phrases = {
+"attack": ["Arcane blast!", "By the elements!", "Magic surge!", "Feel my power!"],
+"damage": ["My wards falter!", "That stings!", "I need mana!", "Agh, too close!"],
+"defeated": ["My spells... fade...", "The arcane fails...", "I’m out of mana...", "Darkness takes me..."],
+"heal": ["My magic is restored!", "Energy flows anew!", "Thanks for the boost!", "I’m charged up!"]
+}
+metadata/_custom_type_script = "uid://dnuyv85hru5kp"

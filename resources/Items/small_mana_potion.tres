@@ -11,5 +11,4 @@ icon = ExtResource("1_1fyds")
 heal_amount = 0
 description = "Consume this potion to restore 200 mana"
 max_stack_size = 5
-drop_rate = 50.0
-max_drop_quantity = 3.0
+use_on_player = true

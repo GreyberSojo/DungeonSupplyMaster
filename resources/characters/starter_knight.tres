@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="AllyData" load_steps=3 format=3 uid="uid://dff31bgokiakj"]
+
+[ext_resource type="Script" uid="uid://dnuyv85hru5kp" path="res://scripts/battle/AllyData.gd" id="1_bhsoh"]
+[ext_resource type="Texture2D" uid="uid://bo58wsxmwter6" path="res://assets/mobs/knight.png" id="2_bh37v"]
+
+[resource]
+script = ExtResource("1_bhsoh")
+name = "Knight"
+max_hp = 120
+current_hp = 120
+attack_min = 10
+attack_max = 25
+magic = 5
+attack_speed = 0.4
+sprite = ExtResource("2_bh37v")
+skills = Array[String]([])
+team = "Blue"
+dialogue_phrases = {
+"attack": ["Taste my blade!", "For honor!", "Strike true!", "To battle!"],
+"damage": ["A mere scratch!", "I stand firm!", "You'll pay for that!", "My armor holds!"],
+"defeated": ["I fall... in honor...", "My duty... ends...", "No... not yet...", "Forgive me..."],
+"heal": ["My strength returns!", "Ready to fight on!", "Thank you, healer!", "Back to the fray!"]
+}
+metadata/_custom_type_script = "uid://dnuyv85hru5kp"
