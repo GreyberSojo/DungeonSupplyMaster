@@ -1,10 +1,4 @@
 # DungeonSupplyMaster
 
-DEMO GAME IN PROGRESS - PLEASE, DO NOT USE THIS CONTENT FOR SELLING
-GAME STILL NOT BALANCED
+DEMO GAME (WORK IN PROGRESS)
 ----------------------------------------------------------------------------------
-AL CAMBIAR EL INICIO "GAME" DEBO CAMBIAR LOS SIGUIENTES DIRECTORIOS PARA LOS ARCHIVOS:
-	
-	|FILE| - |path to change|  
-RequestManager.gd - request_container
-ally.gd - ui_path , battle
